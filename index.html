@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ----- ROOT & RESET (unchanged structure, only style adaptations) ----- */
+        /* ----- ROOT & RESET ----- */
         :root {
             --primary: #0066cc;
             --primary-dark: #0052a3;
@@ -43,7 +43,7 @@
             width: 100%;
         }
 
-        /* header & navigation (unchanged) */
+        /* header & navigation */
         header {
             background-color: var(--white);
             padding: 1.2rem 0;
@@ -104,7 +104,7 @@
         }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,102,204,0.4); }
 
-        /* Hero section – background fixed */
+        /* Hero section */
         .hero {
             height: 100vh;
             background: url('water.jpg') center/cover fixed;
@@ -128,7 +128,7 @@
         }
         .secondary-button:hover { background:white; color:var(--primary); transform:translateY(-3px); }
 
-        /* stats (unchanged) */
+        /* stats */
         .stats { background: var(--white); padding:4rem 0; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
         .stats-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; }
         .stat-item { text-align:center; padding:1.5rem; }
@@ -179,7 +179,7 @@
         .buy-now { background:var(--secondary); color:white; }
         .buy-now:hover { background:#008a4a; }
 
-        /* Delivery section - removed free/24/7 wording, adapted to wed/fri */
+        /* Delivery section */
         .delivery { background: linear-gradient(135deg, var(--light) 0%, #e6f2ff 100%); }
         .delivery-content { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
         .delivery-image { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); height:400px; background-size:cover; background-position:center; }
@@ -210,10 +210,9 @@
         }
         .service-title { font-size:1.4rem; margin-bottom:1rem; color:var(--dark); font-weight:600; }
         .service-description { font-size:1rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.6; }
-        /* price line completely omitted */
         .service-card .cta-button { margin-top:0.5rem; width:100%; text-align:center; }
 
-        /* testimonials (unchanged) */
+        /* testimonials */
         .testimonials { background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color:white; }
         .testimonials .section-title { color:white; }
         .testimonials .section-description { color:rgba(255,255,255,0.8); }
@@ -225,13 +224,15 @@
         .testimonial-text { font-style:italic; margin-bottom:1.5rem; }
         .testimonial-author { display:flex; align-items:center; gap:1rem; }
         .author-avatar { width:50px; height:50px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-weight:600; }
+        .author-info h4 { color: white; margin-bottom: 0.2rem; }
+        .author-info p { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
 
-        /* CTA section (unchanged) */
+        /* CTA section */
         .cta-section { background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color:white; text-align:center; padding:5rem 0; }
         .cta-section h2 { font-size:2.5rem; margin-bottom:1.5rem; font-weight:700; }
         .cta-section p { font-size:1.2rem; margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; opacity:0.9; }
 
-        /* cart modal (unchanged but will use dynamic images) */
+        /* cart modal */
         .cart-modal {
             position:fixed; top:0; right:-400px; width:380px; height:100vh; background:white;
             box-shadow:-5px 0 15px rgba(0,0,0,0.1); transition:right 0.3s ease; z-index:1100;
@@ -253,7 +254,7 @@
         .overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; display:none; }
         .overlay.active { display:block; }
 
-        /* Footer (unchanged) */
+        /* Footer */
         footer { background:var(--dark); color:white; padding:4rem 0 2rem; }
         .footer-content { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:3rem; margin-bottom:3rem; }
         .footer-column h3 { font-size:1.3rem; margin-bottom:1.5rem; font-weight:600; color:white; }
@@ -290,12 +291,11 @@
             .stats-container { grid-template-columns:1fr; }
         }
 
-        /* additional tweaks */
         .delivery-highlight { color: var(--primary-dark); font-weight: 600; }
     </style>
 </head>
 <body>
-    <!-- Header (unchanged) -->
+    <!-- Header -->
     <header id="header">
         <div class="container header-content">
             <div class="logo">
@@ -324,7 +324,7 @@
         </div>
     </header>
 
-    <!-- Hero (unchanged) -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <h2>Pure Water, Healthy Life</h2>
@@ -336,7 +336,7 @@
         </div>
     </section>
 
-    <!-- Stats (unchanged) -->
+    <!-- Stats -->
     <section class="stats">
         <div class="container stats-container">
             <div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">Happy Customers</div></div>
@@ -346,7 +346,7 @@
         </div>
     </section>
 
-    <!-- Products Section (image references kept as in data attributes) -->
+    <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
             <div class="section-header">
@@ -414,7 +414,7 @@
         </div>
     </section>
 
-    <!-- Delivery section – removed free delivery & 24/7, replaced with Wednesday/Friday -->
+    <!-- Delivery section -->
     <section class="delivery" id="delivery">
         <div class="container">
             <div class="section-header">
@@ -464,7 +464,7 @@
         </div>
     </section>
 
-    <!-- Medical Services – prices removed -->
+    <!-- Medical Services -->
     <section class="medical-services" id="medical">
         <div class="container">
             <div class="section-header">
@@ -477,7 +477,6 @@
                     <div class="service-icon"><i class="fas fa-user-md"></i></div>
                     <h3 class="service-title">General Consultation</h3>
                     <p class="service-description">Comprehensive medical check-ups and consultations with experienced healthcare professionals.</p>
-                    <!-- price line omitted -->
                     <button class="cta-button book-appointment" data-service="General Consultation">Book Appointment</button>
                 </div>
                 <div class="service-card">
@@ -496,50 +495,50 @@
         </div>
     </section>
 
-<!-- Testimonials Section with Improved Visibility -->
-<section class="testimonials" id="testimonials">
-    <div class="container">
-        <div class="section-header">
-            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Testimonials</p>
-            <h2 class="section-title" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">What Our Customers Say</h2>
-            <p class="section-description" style="color: rgba(255, 255, 255, 0.85);">Hear from our satisfied customers about their experience with ASN Upendo Village Fountain.</p>
+    <!-- Testimonials Section with Improved Visibility -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Testimonials</p>
+                <h2 class="section-title" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">What Our Customers Say</h2>
+                <p class="section-description" style="color: rgba(255, 255, 255, 0.85);">Hear from our satisfied customers about their experience with ASN Upendo Village Fountain.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The water from ASN Upendo Village Fountain is the purest I've ever tasted. Their delivery service is always prompt on Wednesdays and Fridays, and the medical clinic has been a blessing for my family."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Jane Muthoni</h4>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a busy professional, I rely on their Wednesday/Friday water delivery service. It's convenient, reliable, and the quality is consistently excellent. The medical services are also top-notch."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kimani</h4>
+                            <p>Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I've been buying water from them for years. The quality is consistent and the Wednesday delivery fits perfectly with my schedule. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AW</div>
+                        <div class="author-info">
+                            <h4>Ann Wanjiku</h4>
+                            <p>Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The water from ASN Upendo Village Fountain is the purest I've ever tasted. Their delivery service is always prompt on Wednesdays and Fridays, and the medical clinic has been a blessing for my family."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JM</div>
-                    <div class="author-info">
-                        <h4 style="color: white;">Jane Muthoni</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8);">Regular Customer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"As a busy professional, I rely on their Wednesday/Friday water delivery service. It's convenient, reliable, and the quality is consistently excellent. The medical services are also top-notch."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">DK</div>
-                    <div class="author-info">
-                        <h4 style="color: white;">David Kimani</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8);">Office Manager</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The maternal health services at their clinic helped me through my pregnancy. The staff is caring and professional. I also use their water refill service which saves me money and they deliver every Friday."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AW</div>
-                    <div class="author-info">
-                        <h4 style="color: white;">Ann Wanjiku</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8);">Mother of Two</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <!-- CTA section (unchanged) -->
+    <!-- CTA section -->
     <section class="cta-section" id="contact">
         <div class="container">
             <h2>Ready for Pure Water & Quality Healthcare?</h2>
@@ -551,7 +550,7 @@
         </div>
     </section>
 
-    <!-- Cart Modal (unchanged structure) -->
+    <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">&times;</button></div>
         <div class="cart-items" id="cartItems"></div>
@@ -560,7 +559,7 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- Footer (unchanged) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -599,7 +598,7 @@
     </footer>
 
     <script>
-        // CART FUNCTIONALITY – MODIFIED TO USE EXACT PRODUCT IMAGE
+        // CART FUNCTIONALITY
         let cart = [];
         const cartIcon = document.getElementById('cartIcon');
         const cartModal = document.getElementById('cartModal');
@@ -614,26 +613,26 @@
         closeCart.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
         overlay.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
 
-        // Add to cart – preserve data-image from button (original product image)
+        // Add to cart
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', (e) => {
                 const id = button.getAttribute('data-id');
                 const name = button.getAttribute('data-name');
                 const price = parseInt(button.getAttribute('data-price'));
-                const image = button.getAttribute('data-image'); // exact product image
+                const image = button.getAttribute('data-image');
                 addToCart(id, name, price, image);
                 alert(`${name} added to cart!`);
             });
         });
 
-        // Buy now – same image handling
+        // Buy now
         document.querySelectorAll('.buy-now').forEach(button => {
             button.addEventListener('click', (e) => {
                 const id = button.getAttribute('data-id');
                 const name = button.getAttribute('data-name');
                 const price = parseInt(button.getAttribute('data-price'));
                 const image = button.getAttribute('data-image');
-                cart = []; // clear cart and add only this item
+                cart = [];
                 addToCart(id, name, price, image);
                 cartModal.classList.add('active');
                 overlay.classList.add('active');
@@ -641,7 +640,7 @@
             });
         });
 
-        // Book appointment (unchanged)
+        // Book appointment
         document.querySelectorAll('.book-appointment').forEach(button => {
             button.addEventListener('click', (e) => {
                 const service = button.getAttribute('data-service');
@@ -695,7 +694,6 @@
 
             cartTotal.textContent = `Total: KSH ${total.toLocaleString()}`;
 
-            // attach events
             document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
                 btn.addEventListener('click', (e) => { decreaseQuantity(btn.getAttribute('data-id')); });
             });
@@ -724,7 +722,7 @@
             updateCartCount(); updateCartDisplay();
         }
 
-        // Checkout – includes delivery note (wed/fri)
+        // Checkout
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) { alert('Cart empty'); return; }
             let msg = "Hello Upendo Village! I'd like to order:\n\n";
@@ -741,7 +739,7 @@
             cartModal.classList.remove('active'); overlay.classList.remove('active');
         });
 
-        // Header scroll effect & smooth scroll (unchanged)
+        // Header scroll effect & smooth scroll
         window.addEventListener('scroll', ()=>{
             document.getElementById('header').classList.toggle('header-scrolled', window.scrollY > 50);
         });
@@ -755,7 +753,7 @@
             });
         });
 
-        // simple animation on scroll (unchanged)
+        // Animation on scroll
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; } });
         }, { threshold:0.1 });
@@ -763,15 +761,5 @@
             c.style.opacity='0'; c.style.transform='translateY(20px)'; c.style.transition='all 0.5s'; observer.observe(c);
         });
     </script>
-    <!-- insert full testimonials block (abridged for space but functional) -->
-    <section class="testimonials" style="padding-top:0;">
-        <div class="container">
-            <div class="testimonials-grid">
-                <div class="testimonial-card"><p class="testimonial-text">"The water is pure and delivery on Wednesday was prompt!"</p><div class="testimonial-author"><div class="author-avatar">JM</div><div><h4>Jane</h4><p>Regular</p></div></div></div>
-                <div class="testimonial-card"><p class="testimonial-text">"Medical services are excellent, and water quality top."</p><div class="testimonial-author"><div class="author-avatar">DK</div><div><h4>David</h4><p>Office</p></div></div></div>
-                <div class="testimonial-card"><p class="testimonial-text">"I love that they deliver on fixed days – very reliable."</p><div class="testimonial-author"><div class="author-avatar">AW</div><div><h4>Ann</h4><p>Mother</p></div></div></div>
-            </div>
-        </div>
-    </section>
 </body>
 </html>
