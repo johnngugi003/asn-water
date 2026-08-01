@@ -1,765 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASN Upendo Village Fountain | Premium Water & Healthcare</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ----- ROOT & RESET ----- */
-        :root {
-            --primary: #0066cc;
-            --primary-dark: #0052a3;
-            --secondary: #00a859;
-            --accent: #ff9900;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
-            --light-gray: #e2e8f0;
-            --white: #ffffff;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --radius: 12px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASN Upendo Village Fountain | Pure Water & Healthcare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- ROOT & RESET ----- */
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #0052a3;
+      --secondary: #00a859;
+      --accent: #ff9900;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --white: #ffffff;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+    body { background-color:var(--light); color:var(--dark); line-height:1.6; overflow-x:hidden; }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; width:100%; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+    /* header & navigation */
+    header { background-color:var(--white); padding:1.2rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.05); transition:all 0.3s ease; }
+    .header-scrolled { padding:0.8rem 0; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+    .header-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .logo { display:flex; align-items:center; gap:12px; }
+    .logo-icon { width:40px; height:40px; background:linear-gradient(135deg, var(--primary), var(--secondary)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem; }
+    .logo-text { display:flex; flex-direction:column; }
+    .logo-text h1 { font-size:1.5rem; font-weight:700; color:var(--primary); line-height:1.2; }
+    .logo-text span { font-size:0.8rem; color:var(--gray); font-weight:400; }
+    nav ul { display:flex; list-style:none; gap:2.2rem; flex-wrap:wrap; }
+    nav a { color:var(--dark); text-decoration:none; font-weight:500; font-size:1rem; transition:all 0.3s ease; position:relative; }
+    nav a:hover { color:var(--primary); }
+    nav a::after { content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background-color:var(--primary); transition:width 0.3s ease; }
+    nav a:hover::after { width:100%; }
+    .header-actions { display:flex; align-items:center; gap:1.5rem; }
+    .cart-icon { position:relative; cursor:pointer; color:var(--dark); font-size:1.3rem; transition:color 0.3s ease; }
+    .cart-icon:hover { color:var(--primary); }
+    .cart-count { position:absolute; top:-8px; right:-8px; background-color:var(--accent); color:white; border-radius:50%; width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:600; }
+    .cta-button { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:white; padding:0.8rem 1.8rem; border-radius:50px; font-weight:600; transition:all 0.3s ease; text-decoration:none; display:inline-block; border:none; cursor:pointer; box-shadow:0 4px 15px rgba(0,102,204,0.3); }
+    .cta-button:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,102,204,0.4); }
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* Hero */
+    .hero { height:100vh; background:url('water.jpg') center/cover fixed; color:white; display:flex; align-items:center; text-align:center; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, rgba(33,49,61,0.85), rgba(0,102,204,0.7)); z-index:1; }
+    .hero-content { max-width:850px; margin:0 auto; position:relative; z-index:2; }
+    .hero h2 { font-size:3.5rem; margin-bottom:1.5rem; font-weight:700; line-height:1.2; }
+    .hero p { font-size:1.3rem; margin-bottom:2.5rem; font-weight:300; opacity:0.9; }
+    .hero-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .secondary-button { background:transparent; color:white; border:2px solid white; padding:0.8rem 1.8rem; border-radius:50px; font-weight:600; transition:all 0.3s ease; text-decoration:none; display:inline-block; }
+    .secondary-button:hover { background:white; color:var(--primary); transform:translateY(-3px); }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-        }
+    /* stats */
+    .stats { background:var(--white); padding:4rem 0; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+    .stats-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; }
+    .stat-item { text-align:center; padding:1.5rem; }
+    .stat-number { font-size:2.5rem; font-weight:700; color:var(--primary); margin-bottom:0.5rem; }
+    .stat-label { font-size:1rem; color:var(--gray); font-weight:500; }
 
-        /* header & navigation */
-        header {
-            background-color: var(--white);
-            padding: 1.2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
+    /* sections */
+    section { padding:6rem 0; }
+    .section-header { text-align:center; margin-bottom:4rem; }
+    .section-subtitle { font-size:1rem; color:var(--primary); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem; }
+    .section-title { font-size:2.5rem; color:var(--dark); margin-bottom:1.5rem; font-weight:700; line-height:1.2; }
+    .section-description { font-size:1.2rem; color:var(--gray); max-width:700px; margin:0 auto; }
 
-        .header-scrolled { padding: 0.8rem 0; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    /* products */
+    .products { background-color:var(--light); }
+    .products-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2.5rem; }
+    .product-card { background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:all 0.3s ease; position:relative; }
+    .product-card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+    .product-badge { position:absolute; top:15px; left:15px; background:var(--accent); color:white; padding:0.4rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:600; z-index:10; }
+    .product-image { height:220px; background-size:cover; background-position:center; position:relative; }
+    .product-image::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:50%; background:linear-gradient(transparent, rgba(0,0,0,0.1)); }
+    .product-content { padding:1.8rem; }
+    .product-title { font-size:1.3rem; margin-bottom:0.8rem; color:var(--dark); font-weight:600; }
+    .product-description { font-size:0.95rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.5; }
+    .product-price { font-size:1.5rem; font-weight:700; color:var(--secondary); margin-bottom:1.5rem; }
+    .product-actions { display:flex; gap:0.8rem; }
+    .add-to-cart, .buy-now { flex:1; border:none; padding:0.8rem; border-radius:8px; cursor:pointer; transition:all 0.3s ease; font-weight:600; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
+    .add-to-cart { background:var(--primary); color:white; }
+    .add-to-cart:hover { background:var(--primary-dark); }
+    .buy-now { background:var(--secondary); color:white; }
+    .buy-now:hover { background:#008a4a; }
 
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon {
-            width: 40px; height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.2rem;
-        }
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text h1 { font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1.2; }
-        .logo-text span { font-size: 0.8rem; color: var(--gray); font-weight: 400; }
+    /* Delivery */
+    .delivery { background: linear-gradient(135deg, var(--light) 0%, #e6f2ff 100%); }
+    .delivery-content { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .delivery-image { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); height:400px; background-size:cover; background-position:center; }
+    .delivery-text h2 { font-size:2.2rem; margin-bottom:1.5rem; color:var(--dark); font-weight:700; }
+    .delivery-text p { font-size:1.1rem; color:var(--gray); margin-bottom:1.2rem; line-height:1.6; }
+    .delivery-features { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem; }
+    .delivery-feature { display:flex; align-items:flex-start; gap:1rem; }
+    .feature-icon { width:50px; height:50px; background:linear-gradient(135deg, var(--primary), var(--secondary)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem; flex-shrink:0; }
+    .feature-text h3 { font-size:1.1rem; margin-bottom:0.5rem; color:var(--dark); font-weight:600; }
+    .feature-text p { font-size:0.95rem; color:var(--gray); margin:0; }
 
-        nav ul { display: flex; list-style: none; gap: 2.2rem; flex-wrap: wrap; }
-        nav a {
-            color: var(--dark); text-decoration: none; font-weight: 500; font-size: 1rem;
-            transition: all 0.3s ease; position: relative;
-        }
-        nav a:hover { color: var(--primary); }
-        nav a::after {
-            content: ''; position: absolute; bottom: -5px; left: 0;
-            width: 0; height: 2px; background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after { width: 100%; }
+    /* medical services */
+    .medical-services { background:var(--white); }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; }
+    .service-card { background:var(--light); border-radius:var(--radius); padding:2.5rem 2rem; text-align:center; box-shadow:var(--shadow); transition:all 0.3s ease; }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+    .service-icon { width:70px; height:70px; background:linear-gradient(135deg, var(--primary), var(--secondary)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.8rem; margin:0 auto 1.5rem; }
+    .service-title { font-size:1.4rem; margin-bottom:1rem; color:var(--dark); font-weight:600; }
+    .service-description { font-size:1rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.6; }
+    .service-card .cta-button { margin-top:0.5rem; width:100%; text-align:center; }
 
-        .header-actions { display: flex; align-items: center; gap: 1.5rem; }
-        .cart-icon {
-            position: relative; cursor: pointer; color: var(--dark); font-size: 1.3rem;
-            transition: color 0.3s ease;
-        }
-        .cart-icon:hover { color: var(--primary); }
-        .cart-count {
-            position: absolute; top: -8px; right: -8px; background-color: var(--accent);
-            color: white; border-radius: 50%; width: 20px; height: 20px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.75rem; font-weight: 600;
-        }
+    /* testimonials */
+    .testimonials { background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color:white; }
+    .testimonials .section-title { color:white; }
+    .testimonials .section-description { color:rgba(255,255,255,0.8); }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
+    .testimonial-card { background:rgba(255,255,255,0.1); border-radius:var(--radius); padding:2rem; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); }
+    .testimonial-text { font-style:italic; margin-bottom:1.5rem; }
+    .testimonial-author { display:flex; align-items:center; gap:1rem; }
+    .author-avatar { width:50px; height:50px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-weight:600; }
+    .author-info h4 { color: white; margin-bottom: 0.2rem; }
+    .author-info p { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
 
-        .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white; padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 600;
-            transition: all 0.3s ease; text-decoration: none; display: inline-block;
-            border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,102,204,0.3);
-        }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,102,204,0.4); }
+    /* CTA */
+    .cta-section { background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color:white; text-align:center; padding:5rem 0; }
+    .cta-section h2 { font-size:2.5rem; margin-bottom:1.5rem; font-weight:700; }
+    .cta-section p { font-size:1.2rem; margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; opacity:0.9; }
 
-        /* Hero section */
-        .hero {
-            height: 100vh;
-            background: url('water.jpg') center/cover fixed;
-            color: white;
-            display: flex; align-items: center; text-align: center;
-            position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-            background: linear-gradient(135deg, rgba(33,49,61,0.85), rgba(0,102,204,0.7));
-            z-index:1;
-        }
-        .hero-content { max-width:850px; margin:0 auto; position:relative; z-index:2; }
-        .hero h2 { font-size:3.5rem; margin-bottom:1.5rem; font-weight:700; line-height:1.2; }
-        .hero p { font-size:1.3rem; margin-bottom:2.5rem; font-weight:300; opacity:0.9; }
-        .hero-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-        .secondary-button {
-            background:transparent; color:white; border:2px solid white;
-            padding:0.8rem 1.8rem; border-radius:50px; font-weight:600;
-            transition:all 0.3s ease; text-decoration:none; display:inline-block;
-        }
-        .secondary-button:hover { background:white; color:var(--primary); transform:translateY(-3px); }
+    /* cart modal */
+    .cart-modal { position:fixed; top:0; right:-400px; width:380px; height:100vh; background:white; box-shadow:-5px 0 15px rgba(0,0,0,0.1); transition:right 0.3s ease; z-index:1100; padding:2rem; overflow-y:auto; }
+    .cart-modal.active { right:0; }
+    .cart-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid #eee; }
+    .close-cart { background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666; }
+    .cart-item { display:flex; gap:1rem; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid #eee; }
+    .cart-item-img { width:80px; height:80px; background-size:cover; background-position:center; border-radius:5px; flex-shrink:0; }
+    .cart-item-details { flex:1; }
+    .cart-item-title { font-weight:600; }
+    .cart-item-price { color:var(--secondary); font-weight:bold; }
+    .cart-item-actions { display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem; flex-wrap:wrap; }
+    .quantity-btn { background:#f0f0f0; border:none; width:25px; height:25px; border-radius:50%; cursor:pointer; }
+    .remove-item { color:var(--accent); background:none; border:none; cursor:pointer; margin-left:auto; }
+    .cart-total { font-size:1.3rem; font-weight:bold; margin-bottom:1.5rem; text-align:right; }
+    .checkout-btn { width:100%; padding:1rem; background:var(--secondary); color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; display:none; }
+    .overlay.active { display:block; }
 
-        /* stats */
-        .stats { background: var(--white); padding:4rem 0; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-        .stats-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; }
-        .stat-item { text-align:center; padding:1.5rem; }
-        .stat-number { font-size:2.5rem; font-weight:700; color:var(--primary); margin-bottom:0.5rem; }
-        .stat-label { font-size:1rem; color:var(--gray); font-weight:500; }
+    /* footer */
+    footer { background:var(--dark); color:white; padding:4rem 0 2rem; }
+    .footer-content { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:3rem; margin-bottom:3rem; }
+    .footer-column h3 { font-size:1.3rem; margin-bottom:1.5rem; font-weight:600; color:white; }
+    .footer-links { list-style:none; }
+    .footer-links li { margin-bottom:0.8rem; }
+    .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.3s ease; }
+    .footer-links a:hover { color:white; }
+    .contact-info { display:flex; flex-direction:column; gap:1rem; }
+    .contact-item { display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.7); }
+    .social-links { display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .social-links a { display:flex; align-items:center; justify-content:center; width:40px; height:40px; background:rgba(255,255,255,0.1); border-radius:50%; color:white; transition:all 0.3s ease; }
+    .social-links a:hover { background:var(--primary); transform:translateY(-3px); }
+    .footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.6); }
 
-        /* sections global */
-        section { padding:6rem 0; }
-        .section-header { text-align:center; margin-bottom:4rem; }
-        .section-subtitle {
-            font-size:1rem; color:var(--primary); font-weight:600; text-transform:uppercase;
-            letter-spacing:1px; margin-bottom:1rem;
-        }
-        .section-title { font-size:2.5rem; color:var(--dark); margin-bottom:1.5rem; font-weight:700; line-height:1.2; }
-        .section-description { font-size:1.2rem; color:var(--gray); max-width:700px; margin:0 auto; }
-
-        /* products grid */
-        .products { background-color:var(--light); }
-        .products-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2.5rem; }
-        .product-card {
-            background:var(--white); border-radius:var(--radius); overflow:hidden;
-            box-shadow:var(--shadow); transition:all 0.3s ease; position:relative;
-        }
-        .product-card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
-        .product-badge {
-            position:absolute; top:15px; left:15px; background:var(--accent); color:white;
-            padding:0.4rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:600; z-index:10;
-        }
-        .product-image {
-            height:220px; background-size:cover; background-position:center; position:relative;
-        }
-        .product-image::after {
-            content:''; position:absolute; bottom:0; left:0; width:100%; height:50%;
-            background:linear-gradient(transparent, rgba(0,0,0,0.1));
-        }
-        .product-content { padding:1.8rem; }
-        .product-title { font-size:1.3rem; margin-bottom:0.8rem; color:var(--dark); font-weight:600; }
-        .product-description { font-size:0.95rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.5; }
-        .product-price { font-size:1.5rem; font-weight:700; color:var(--secondary); margin-bottom:1.5rem; }
-        .product-actions { display:flex; gap:0.8rem; }
-        .add-to-cart, .buy-now {
-            flex:1; border:none; padding:0.8rem; border-radius:8px; cursor:pointer;
-            transition:all 0.3s ease; font-weight:600; display:flex; align-items:center;
-            justify-content:center; gap:0.5rem;
-        }
-        .add-to-cart { background:var(--primary); color:white; }
-        .add-to-cart:hover { background:var(--primary-dark); }
-        .buy-now { background:var(--secondary); color:white; }
-        .buy-now:hover { background:#008a4a; }
-
-        /* Delivery section */
-        .delivery { background: linear-gradient(135deg, var(--light) 0%, #e6f2ff 100%); }
-        .delivery-content { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-        .delivery-image { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); height:400px; background-size:cover; background-position:center; }
-        .delivery-text h2 { font-size:2.2rem; margin-bottom:1.5rem; color:var(--dark); font-weight:700; }
-        .delivery-text p { font-size:1.1rem; color:var(--gray); margin-bottom:1.2rem; line-height:1.6; }
-        .delivery-features { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem; }
-        .delivery-feature { display:flex; align-items:flex-start; gap:1rem; }
-        .feature-icon {
-            width:50px; height:50px; background:linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius:50%; display:flex; align-items:center; justify-content:center;
-            color:white; font-size:1.2rem; flex-shrink:0;
-        }
-        .feature-text h3 { font-size:1.1rem; margin-bottom:0.5rem; color:var(--dark); font-weight:600; }
-        .feature-text p { font-size:0.95rem; color:var(--gray); margin:0; }
-
-        /* medical services (prices removed) */
-        .medical-services { background:var(--white); }
-        .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; }
-        .service-card {
-            background:var(--light); border-radius:var(--radius); padding:2.5rem 2rem;
-            text-align:center; box-shadow:var(--shadow); transition:all 0.3s ease;
-        }
-        .service-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
-        .service-icon {
-            width:70px; height:70px; background:linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius:50%; display:flex; align-items:center; justify-content:center;
-            color:white; font-size:1.8rem; margin:0 auto 1.5rem;
-        }
-        .service-title { font-size:1.4rem; margin-bottom:1rem; color:var(--dark); font-weight:600; }
-        .service-description { font-size:1rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.6; }
-        .service-card .cta-button { margin-top:0.5rem; width:100%; text-align:center; }
-
-        /* testimonials */
-        .testimonials { background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color:white; }
-        .testimonials .section-title { color:white; }
-        .testimonials .section-description { color:rgba(255,255,255,0.8); }
-        .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
-        .testimonial-card {
-            background:rgba(255,255,255,0.1); border-radius:var(--radius); padding:2rem;
-            backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2);
-        }
-        .testimonial-text { font-style:italic; margin-bottom:1.5rem; }
-        .testimonial-author { display:flex; align-items:center; gap:1rem; }
-        .author-avatar { width:50px; height:50px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-weight:600; }
-        .author-info h4 { color: white; margin-bottom: 0.2rem; }
-        .author-info p { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
-
-        /* CTA section */
-        .cta-section { background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color:white; text-align:center; padding:5rem 0; }
-        .cta-section h2 { font-size:2.5rem; margin-bottom:1.5rem; font-weight:700; }
-        .cta-section p { font-size:1.2rem; margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; opacity:0.9; }
-
-        /* cart modal */
-        .cart-modal {
-            position:fixed; top:0; right:-400px; width:380px; height:100vh; background:white;
-            box-shadow:-5px 0 15px rgba(0,0,0,0.1); transition:right 0.3s ease; z-index:1100;
-            padding:2rem; overflow-y:auto;
-        }
-        .cart-modal.active { right:0; }
-        .cart-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid #eee; }
-        .close-cart { background:none; border:none; font-size:1.5rem; cursor:pointer; color:#666; }
-        .cart-item { display:flex; gap:1rem; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid #eee; }
-        .cart-item-img { width:80px; height:80px; background-size:cover; background-position:center; border-radius:5px; flex-shrink:0; }
-        .cart-item-details { flex:1; }
-        .cart-item-title { font-weight:600; }
-        .cart-item-price { color:var(--secondary); font-weight:bold; }
-        .cart-item-actions { display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem; flex-wrap:wrap; }
-        .quantity-btn { background:#f0f0f0; border:none; width:25px; height:25px; border-radius:50%; cursor:pointer; }
-        .remove-item { color:var(--accent); background:none; border:none; cursor:pointer; margin-left:auto; }
-        .cart-total { font-size:1.3rem; font-weight:bold; margin-bottom:1.5rem; text-align:right; }
-        .checkout-btn { width:100%; padding:1rem; background:var(--secondary); color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
-        .overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; display:none; }
-        .overlay.active { display:block; }
-
-        /* Footer */
-        footer { background:var(--dark); color:white; padding:4rem 0 2rem; }
-        .footer-content { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:3rem; margin-bottom:3rem; }
-        .footer-column h3 { font-size:1.3rem; margin-bottom:1.5rem; font-weight:600; color:white; }
-        .footer-links { list-style:none; }
-        .footer-links li { margin-bottom:0.8rem; }
-        .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.3s ease; }
-        .footer-links a:hover { color:white; }
-        .contact-info { display:flex; flex-direction:column; gap:1rem; }
-        .contact-item { display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.7); }
-        .social-links { display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; }
-        .social-links a { display:flex; align-items:center; justify-content:center; width:40px; height:40px; background:rgba(255,255,255,0.1); border-radius:50%; color:white; transition:all 0.3s ease; }
-        .social-links a:hover { background:var(--primary); transform:translateY(-3px); }
-        .footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.6); }
-
-        /* responsive design */
-        @media (max-width: 992px) {
-            .delivery-content { grid-template-columns:1fr; gap:3rem; }
-            .delivery-image { height:300px; }
-            .products-grid { gap:2rem; }
-        }
-        @media (max-width: 768px) {
-            .header-content { flex-direction:column; gap:1rem; }
-            nav ul { gap:1rem; justify-content:center; }
-            .hero h2 { font-size:2.5rem; }
-            .hero p { font-size:1.1rem; }
-            .section-title { font-size:2rem; }
-            .delivery-features { grid-template-columns:1fr; }
-            .cart-modal { width:100%; right:-100%; }
-        }
-        @media (max-width: 576px) {
-            .hero-buttons { flex-direction:column; align-items:center; }
-            .product-actions { flex-direction:column; }
-            .footer-content { grid-template-columns:1fr; }
-            .stats-container { grid-template-columns:1fr; }
-        }
-
-        .delivery-highlight { color: var(--primary-dark); font-weight: 600; }
-    </style>
+    /* responsive */
+    @media (max-width: 992px) { .delivery-content { grid-template-columns:1fr; gap:3rem; } .delivery-image { height:300px; } .products-grid { gap:2rem; } }
+    @media (max-width: 768px) { .header-content { flex-direction:column; gap:1rem; } nav ul { gap:1rem; justify-content:center; } .hero h2 { font-size:2.5rem; } .hero p { font-size:1.1rem; } .section-title { font-size:2rem; } .delivery-features { grid-template-columns:1fr; } .cart-modal { width:100%; right:-100%; } }
+    @media (max-width: 576px) { .hero-buttons { flex-direction:column; align-items:center; } .product-actions { flex-direction:column; } .footer-content { grid-template-columns:1fr; } .stats-container { grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-content">
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-droplet"></i></div>
-                <div class="logo-text">
-                    <h1>Fountain Valley Water</h1>
-                    <span>pure water & healthcare</span>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#delivery">Delivery</a></li>
-                    <li><a href="#medical">Medical Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </div>
-                <a href="#contact" class="cta-button">Order Now</a>
-            </div>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-droplet"></i></div>
+        <div class="logo-text">
+          <h1>Fountain Valley Water</h1>
+          <span>pure water & healthcare</span>
         </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h2>Pure Water, Healthy Life</h2>
-            <p>ASN Upendo Village Fountain provides premium bottled water and comprehensive healthcare services to our community. Experience purity and wellness in every drop.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="cta-button">Shop Water Products</a>
-                <a href="#medical" class="secondary-button">Medical Services</a>
-            </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#delivery">Delivery</a></li>
+          <li><a href="#medical">Medical Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="cart-icon" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
         </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats">
-        <div class="container stats-container">
-            <div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">Happy Customers</div></div>
-            <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years of Service</div></div>
-            <div class="stat-item"><div class="stat-number">Wed/Fri</div><div class="stat-label">Delivery Days</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Pure & Safe</div></div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Our Products</p>
-                <h2 class="section-title">Premium Water Selection</h2>
-                <p class="section-description">Choose from our range of pure, refreshing bottled water products, carefully processed for your health and hydration needs.</p>
-            </div>
-            <div class="products-grid">
-                <!-- product 1 -->
-                <div class="product-card">
-                    <div class="product-badge">Most Popular</div>
-                    <div class="product-image" style="background-image: url('water.jpg')"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">0.5L Bottled Water</h3>
-                        <p class="product-description">Convenient 0.5L bottle, perfect for on-the-go.</p>
-                       
-                        <div class="product-actions">
-                            <button class="add-to-cart" data-id="1" data-name="0.5L Bottled Water" data-price="500" data-image="water.jpg"><i class="fas fa-cart-plus"></i> Add</button>
-                            <button class="buy-now" data-id="1" data-name="0.5L Bottled Water" data-price="500" data-image="water.jpg"><i class="fas fa-bolt"></i> Buy</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- product 2 -->
-                <div class="product-card">
-                    <div class="product-badge">Best Value</div>
-                    <div class="product-image" style="background-image: url('water1.jpg')"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">1L Bottled Water</h3>
-                        <p class="product-description">Perfect for daily hydration, 1L of pure water.</p>
-                        
-                        <div class="product-actions">
-                            <button class="add-to-cart" data-id="2" data-name="1L Bottled Water" data-price="500" data-image="water1.jpg"><i class="fas fa-cart-plus"></i> Add</button>
-                            <button class="buy-now" data-id="2" data-name="1L Bottled Water" data-price="500" data-image="water1.jpg"><i class="fas fa-bolt"></i> Buy</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- product 3 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('water2.jpg')"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">1.5L Bottled Water</h3>
-                        <p class="product-description">Larger bottle for sharing or longer hydration.</p>
-                        
-                        <div class="product-actions">
-                            <button class="add-to-cart" data-id="3" data-name="1.5L Bottled Water" data-price="600" data-image="water2.jpg"><i class="fas fa-cart-plus"></i> Add</button>
-                            <button class="buy-now" data-id="3" data-name="1.5L Bottled Water" data-price="600" data-image="water2.jpg"><i class="fas fa-bolt"></i> Buy</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- product 4 -->
-                <div class="product-card">
-                    <div class="product-badge">Family Pack</div>
-                    <div class="product-image" style="background-image: url('5L.JPG')"></div>
-                    <div class="product-content">
-                        <h3 class="product-title">5L Bottled Water</h3>
-                        <p class="product-description">Family-sized for home use, fresh & pure.</p>
-                        
-                        <div class="product-actions">
-                            <button class="add-to-cart" data-id="4" data-name="5L Bottled Water" data-price="125" data-image="5L.JPG"><i class="fas fa-cart-plus"></i> Add</button>
-                            <button class="buy-now" data-id="4" data-name="5L Bottled Water" data-price="125" data-image="5L.JPG"><i class="fas fa-bolt"></i> Buy</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Delivery section -->
-    <section class="delivery" id="delivery">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Our Service</p>
-                <h2 class="section-title">Reliable Water Delivery</h2>
-                <p class="section-description">We bring pure water to your doorstep on scheduled days: <strong>Wednesday & Friday</strong>.</p>
-            </div>
-            <div class="delivery-content">
-                <div class="delivery-image" style="background-image: url('delivery.jpeg')"></div>
-                <div class="delivery-text">
-                    <h2>Delivery on Wednesdays & Fridays</h2>
-                    <p>We understand the importance of clean water. Our delivery team ensures your water arrives fresh on scheduled days. Order by Tuesday for Wednesday delivery, or by Thursday for Friday delivery.</p>
-                    <p>Service area: Nairobi and surrounding regions. We'll confirm your slot via WhatsApp.</p>
-                    
-                    <div class="delivery-features">
-                        <div class="delivery-feature">
-                            <div class="feature-icon"><i class="fas fa-truck"></i></div>
-                            <div class="feature-text">
-                                <h3>Wednesday Delivery</h3>
-                                <p>Place order by Tuesday 6pm</p>
-                            </div>
-                        </div>
-                        <div class="delivery-feature">
-                            <div class="feature-icon"><i class="fas fa-truck"></i></div>
-                            <div class="feature-text">
-                                <h3>Friday Delivery</h3>
-                                <p>Place order by Thursday 6pm</p>
-                            </div>
-                        </div>
-                        <div class="delivery-feature">
-                            <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="feature-text">
-                                <h3>Wide Coverage</h3>
-                                <p>Nairobi & surrounding areas</p>
-                            </div>
-                        </div>
-                        <div class="delivery-feature">
-                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                            <div class="feature-text">
-                                <h3>Scheduled Service</h3>
-                                <p>Reliable, pre-announced delivery</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Medical Services -->
-    <section class="medical-services" id="medical">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Our Services</p>
-                <h2 class="section-title">Healthcare Solutions</h2>
-                <p class="section-description">Beyond providing pure water, we offer comprehensive healthcare services to keep our community healthy.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
-                    <h3 class="service-title">General Consultation</h3>
-                    <p class="service-description">Comprehensive medical check-ups and consultations with experienced healthcare professionals.</p>
-                    <button class="cta-button book-appointment" data-service="General Consultation">Book Appointment</button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-baby"></i></div>
-                    <h3 class="service-title">Pharmacy Services</h3>
-                    <p class="service-description">Safe and reliable dispensing of prescribed medications with professional guidance.</p>
-                    <button class="cta-button book-appointment" data-service="Pharmacy Services">Book Appointment</button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-vial"></i></div>
-                    <h3 class="service-title">Laboratory Tests</h3>
-                    <p class="service-description">Accurate diagnostic testing and laboratory services to support proper medical treatment.</p>
-                    <button class="cta-button book-appointment" data-service="Laboratory Tests">Book Appointment</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section with Improved Visibility -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Testimonials</p>
-                <h2 class="section-title" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">What Our Customers Say</h2>
-                <p class="section-description" style="color: rgba(255, 255, 255, 0.85);">Hear from our satisfied customers about their experience with ASN Upendo Village Fountain.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The water from ASN Upendo Village Fountain is the purest I've ever tasted. Their delivery service is always prompt on Wednesdays and Fridays, and the medical clinic has been a blessing for my family."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JM</div>
-                        <div class="author-info">
-                            <h4>Jane Muthoni</h4>
-                            <p>Regular Customer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"As a busy professional, I rely on their Wednesday/Friday water delivery service. It's convenient, reliable, and the quality is consistently excellent. The medical services are also top-notch."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DK</div>
-                        <div class="author-info">
-                            <h4>David Kimani</h4>
-                            <p>Office Manager</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I've been buying water from them for years. The quality is consistent and the Wednesday delivery fits perfectly with my schedule. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AW</div>
-                        <div class="author-info">
-                            <h4>Ann Wanjiku</h4>
-                            <p>Loyal Customer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Ready for Pure Water & Quality Healthcare?</h2>
-            <p>Join thousands of satisfied customers.</p>
-            <div class="hero-buttons">
-                <a href="tel:+254110426848" class="cta-button"><i class="fas fa-phone"></i> Call Now</a>
-                <a href="https://wa.me/254110426848?text=Hello%20Upendo%20Village%20Fountain%2C%20I%20would%20like%20to%20inquire%20about%20your%20services" class="secondary-button" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">&times;</button></div>
-        <div class="cart-items" id="cartItems"></div>
-        <div class="cart-total" id="cartTotal">Total: KSH 0</div>
-        <button class="checkout-btn" id="checkoutBtn">Checkout via WhatsApp</button>
+        <a href="#contact" class="cta-button">Order Now</a>
+      </div>
     </div>
-    <div class="overlay" id="overlay"></div>
+  </header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>ASN Upendo Village Fountain</h3>
-                    <p style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;">Pure water & healthcare since 2010.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@asn_upendo_village"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://asnupendovillage.org/">Home</a></li>
-                        <li><a href="#products">Water Products</a></li>
-                        <li><a href="#delivery">Delivery (Wed/Fri)</a></li>
-                        <li><a href="#medical">Medical Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>ASN Upendo Village, Naivasha</span></div>
-                        <div class="contact-item"><i class="fas fa-phone"></i><span>+254 110 426 848</span></div>
-                        <div class="contact-item"><i class="fas fa-envelope"></i><span>it@upendovillage.com</span></div>
-                        <div class="contact-item"><i class="fas fa-clock"></i><span>Mon-Fri: 7AM - 5PM</span></div>
-                    </div>
-                </div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h2>Pure Water, Healthy Life</h2>
+      <p>ASN Upendo Village Fountain provides premium bottled water and comprehensive healthcare services to our community. Experience purity and wellness in every drop.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="cta-button">Shop Water Products</a>
+        <a href="#medical" class="secondary-button">Medical Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container stats-container">
+      <div class="stat-item"><div class="stat-number">10,000+</div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years of Service</div></div>
+      <div class="stat-item"><div class="stat-number">Wed/Fri</div><div class="stat-label">Delivery Days</div></div>
+      <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Pure & Safe</div></div>
+    </div>
+  </section>
+
+  <!-- Products Section (no prices displayed) -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Our Products</p>
+        <h2 class="section-title">Premium Water Selection</h2>
+        <p class="section-description">Choose from our range of pure, refreshing bottled water products, carefully processed for your health and hydration needs.</p>
+      </div>
+      <div class="products-grid">
+        <!-- product 1 -->
+        <div class="product-card">
+          <div class="product-badge">Most Popular</div>
+          <div class="product-image" style="background-image: url('water.jpg')"></div>
+          <div class="product-content">
+            <h3 class="product-title">0.5L Bottled Water</h3>
+            <p class="product-description">Convenient 0.5L bottle, perfect for on-the-go.</p>
+            <div class="product-actions">
+              <button class="add-to-cart" data-id="1" data-name="0.5L Bottled Water" data-image="water.jpg"><i class="fas fa-cart-plus"></i> Add</button>
+              <button class="buy-now" data-id="1" data-name="0.5L Bottled Water" data-image="water.jpg"><i class="fas fa-bolt"></i> Buy</button>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 ASN Upendo Village Fountain. All rights reserved.</p></div>
+          </div>
         </div>
-    </footer>
+        <!-- product 2 -->
+        <div class="product-card">
+          <div class="product-badge">Best Value</div>
+          <div class="product-image" style="background-image: url('water1.jpg')"></div>
+          <div class="product-content">
+            <h3 class="product-title">1L Bottled Water</h3>
+            <p class="product-description">Perfect for daily hydration, 1L of pure water.</p>
+            <div class="product-actions">
+              <button class="add-to-cart" data-id="2" data-name="1L Bottled Water" data-image="water1.jpg"><i class="fas fa-cart-plus"></i> Add</button>
+              <button class="buy-now" data-id="2" data-name="1L Bottled Water" data-image="water1.jpg"><i class="fas fa-bolt"></i> Buy</button>
+            </div>
+          </div>
+        </div>
+        <!-- product 3 -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('water2.jpg')"></div>
+          <div class="product-content">
+            <h3 class="product-title">1.5L Bottled Water</h3>
+            <p class="product-description">Larger bottle for sharing or longer hydration.</p>
+            <div class="product-actions">
+              <button class="add-to-cart" data-id="3" data-name="1.5L Bottled Water" data-image="water2.jpg"><i class="fas fa-cart-plus"></i> Add</button>
+              <button class="buy-now" data-id="3" data-name="1.5L Bottled Water" data-image="water2.jpg"><i class="fas fa-bolt"></i> Buy</button>
+            </div>
+          </div>
+        </div>
+        <!-- product 4 -->
+        <div class="product-card">
+          <div class="product-badge">Family Pack</div>
+          <div class="product-image" style="background-image: url('5L.JPG')"></div>
+          <div class="product-content">
+            <h3 class="product-title">5L Bottled Water</h3>
+            <p class="product-description">Family-sized for home use, fresh & pure.</p>
+            <div class="product-actions">
+              <button class="add-to-cart" data-id="4" data-name="5L Bottled Water" data-image="5L.JPG"><i class="fas fa-cart-plus"></i> Add</button>
+              <button class="buy-now" data-id="4" data-name="5L Bottled Water" data-image="5L.JPG"><i class="fas fa-bolt"></i> Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // CART FUNCTIONALITY
-        let cart = [];
-        const cartIcon = document.getElementById('cartIcon');
-        const cartModal = document.getElementById('cartModal');
-        const closeCart = document.getElementById('closeCart');
-        const overlay = document.getElementById('overlay');
-        const cartItems = document.getElementById('cartItems');
-        const cartTotal = document.getElementById('cartTotal');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const cartCount = document.querySelector('.cart-count');
+  <!-- Delivery section -->
+  <section class="delivery" id="delivery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Our Service</p>
+        <h2 class="section-title">Reliable Water Delivery</h2>
+        <p class="section-description">We bring pure water to your doorstep on scheduled days: <strong>Wednesday & Friday</strong>.</p>
+      </div>
+      <div class="delivery-content">
+        <div class="delivery-image" style="background-image: url('delivery.jpeg')"></div>
+        <div class="delivery-text">
+          <h2>Delivery on Wednesdays & Fridays</h2>
+          <p>We understand the importance of clean water. Our delivery team ensures your water arrives fresh on scheduled days. Order by Tuesday for Wednesday delivery, or by Thursday for Friday delivery.</p>
+          <p>Service area: Nairobi and surrounding regions. We'll confirm your slot via WhatsApp.</p>
+          <div class="delivery-features">
+            <div class="delivery-feature">
+              <div class="feature-icon"><i class="fas fa-truck"></i></div>
+              <div class="feature-text"><h3>Wednesday Delivery</h3><p>Place order by Tuesday 6pm</p></div>
+            </div>
+            <div class="delivery-feature">
+              <div class="feature-icon"><i class="fas fa-truck"></i></div>
+              <div class="feature-text"><h3>Friday Delivery</h3><p>Place order by Thursday 6pm</p></div>
+            </div>
+            <div class="delivery-feature">
+              <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="feature-text"><h3>Wide Coverage</h3><p>Nairobi & surrounding areas</p></div>
+            </div>
+            <div class="delivery-feature">
+              <div class="feature-icon"><i class="fas fa-clock"></i></div>
+              <div class="feature-text"><h3>Scheduled Service</h3><p>Reliable, pre-announced delivery</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        cartIcon.addEventListener('click', () => { cartModal.classList.add('active'); overlay.classList.add('active'); updateCartDisplay(); });
-        closeCart.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
-        overlay.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
+  <!-- Medical Services -->
+  <section class="medical-services" id="medical">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Our Services</p>
+        <h2 class="section-title">Healthcare Solutions</h2>
+        <p class="section-description">Beyond providing pure water, we offer comprehensive healthcare services to keep our community healthy.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-user-md"></i></div>
+          <h3 class="service-title">General Consultation</h3>
+          <p class="service-description">Comprehensive medical check-ups and consultations with experienced healthcare professionals.</p>
+          <button class="cta-button book-appointment" data-service="General Consultation">Book Appointment</button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-baby"></i></div>
+          <h3 class="service-title">Pharmacy Services</h3>
+          <p class="service-description">Safe and reliable dispensing of prescribed medications with professional guidance.</p>
+          <button class="cta-button book-appointment" data-service="Pharmacy Services">Book Appointment</button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-vial"></i></div>
+          <h3 class="service-title">Laboratory Tests</h3>
+          <p class="service-description">Accurate diagnostic testing and laboratory services to support proper medical treatment.</p>
+          <button class="cta-button book-appointment" data-service="Laboratory Tests">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Add to cart
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const id = button.getAttribute('data-id');
-                const name = button.getAttribute('data-name');
-                const price = parseInt(button.getAttribute('data-price'));
-                const image = button.getAttribute('data-image');
-                addToCart(id, name, price, image);
-                alert(`${name} added to cart!`);
-            });
-        });
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.9); font-weight:600; text-shadow:0 2px 4px rgba(0,0,0,0.2);">Testimonials</p>
+        <h2 class="section-title" style="color:white; text-shadow:0 2px 8px rgba(0,0,0,0.3);">What Our Customers Say</h2>
+        <p class="section-description" style="color: rgba(255,255,255,0.85);">Hear from our satisfied customers about their experience with ASN Upendo Village Fountain.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The water from ASN Upendo Village Fountain is the purest I've ever tasted. Their delivery service is always prompt on Wednesdays and Fridays, and the medical clinic has been a blessing for my family."</p>
+          <div class="testimonial-author"><div class="author-avatar">JM</div><div class="author-info"><h4>Jane Muthoni</h4><p>Regular Customer</p></div></div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"As a busy professional, I rely on their Wednesday/Friday water delivery service. It's convenient, reliable, and the quality is consistently excellent. The medical services are also top-notch."</p>
+          <div class="testimonial-author"><div class="author-avatar">DK</div><div class="author-info"><h4>David Kimani</h4><p>Office Manager</p></div></div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"I've been buying water from them for years. The quality is consistent and the Wednesday delivery fits perfectly with my schedule. Highly recommended!"</p>
+          <div class="testimonial-author"><div class="author-avatar">AW</div><div class="author-info"><h4>Ann Wanjiku</h4><p>Loyal Customer</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Buy now
-        document.querySelectorAll('.buy-now').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const id = button.getAttribute('data-id');
-                const name = button.getAttribute('data-name');
-                const price = parseInt(button.getAttribute('data-price'));
-                const image = button.getAttribute('data-image');
-                cart = [];
-                addToCart(id, name, price, image);
-                cartModal.classList.add('active');
-                overlay.classList.add('active');
-                updateCartDisplay();
-            });
-        });
+  <!-- CTA section -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Ready for Pure Water & Quality Healthcare?</h2>
+      <p>Join thousands of satisfied customers.</p>
+      <div class="hero-buttons">
+        <a href="tel:+254110426848" class="cta-button"><i class="fas fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/254110426848?text=Hello%20Upendo%20Village%20Fountain%2C%20I%20would%20like%20to%20inquire%20about%20your%20services" class="secondary-button" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </section>
 
-        // Book appointment
-        document.querySelectorAll('.book-appointment').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const service = button.getAttribute('data-service');
-                const message = `Hello, I would like to book an appointment for ${service}.`;
-                window.open(`https://wa.me/254110426848?text=${encodeURIComponent(message)}`, '_blank');
-            });
-        });
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-header"><h2>Your Cart</h2><button class="close-cart" id="closeCart">&times;</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total" id="cartTotal">Total: KSH 0</div>
+    <button class="checkout-btn" id="checkoutBtn">Checkout via WhatsApp</button>
+  </div>
+  <div class="overlay" id="overlay"></div>
 
-        function addToCart(id, name, price, image) {
-            const existing = cart.find(item => item.id === id);
-            if (existing) existing.quantity += 1;
-            else cart.push({ id, name, price, image, quantity: 1 });
-            updateCartCount();
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>ASN Upendo Village Fountain</h3>
+          <p style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;">Pure water & healthcare since 2010.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@asn_upendo_village"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="https://asnupendovillage.org/">Home</a></li>
+            <li><a href="#products">Water Products</a></li>
+            <li><a href="#delivery">Delivery (Wed/Fri)</a></li>
+            <li><a href="#medical">Medical Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <div class="contact-info">
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>ASN Upendo Village, Naivasha</span></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><span>+254 110 426 848</span></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><span>it@upendovillage.com</span></div>
+            <div class="contact-item"><i class="fas fa-clock"></i><span>Mon-Fri: 7AM - 5PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 ASN Upendo Village Fountain. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    // CART FUNCTIONALITY — no prices, just product names and quantities
+    let cart = [];
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const overlay = document.getElementById('overlay');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const cartCount = document.querySelector('.cart-count');
+
+    cartIcon.addEventListener('click', () => { cartModal.classList.add('active'); overlay.classList.add('active'); updateCartDisplay(); });
+    closeCart.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
+    overlay.addEventListener('click', () => { cartModal.classList.remove('active'); overlay.classList.remove('active'); });
+
+    // Add to cart (no price stored)
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const image = button.getAttribute('data-image');
+        addToCart(id, name, image);
+        alert(`${name} added to cart!`);
+      });
+    });
+
+    // Buy now (no price)
+    document.querySelectorAll('.buy-now').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const image = button.getAttribute('data-image');
+        cart = [];
+        addToCart(id, name, image);
+        cartModal.classList.add('active');
+        overlay.classList.add('active');
+        updateCartDisplay();
+      });
+    });
+
+    // Book appointment
+    document.querySelectorAll('.book-appointment').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const service = button.getAttribute('data-service');
+        const message = `Hello, I would like to book an appointment for ${service}.`;
+        window.open(`https://wa.me/254110426848?text=${encodeURIComponent(message)}`, '_blank');
+      });
+    });
+
+    function addToCart(id, name, image) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) existing.quantity += 1;
+      else cart.push({ id, name, image, quantity: 1 });
+      updateCartCount();
+    }
+
+    function updateCartCount() {
+      const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+      cartCount.textContent = count;
+    }
+
+    function updateCartDisplay() {
+      if (!cartItems) return;
+      cartItems.innerHTML = '';
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+        cartTotal.textContent = 'Total: —';
+        return;
+      }
+
+      let totalQty = 0;
+      cart.forEach(item => { totalQty += item.quantity; });
+      cartTotal.textContent = `Total items: ${totalQty}`;
+
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <div class="cart-item-img" style="background-image: url('${item.image}')"></div>
+          <div class="cart-item-details">
+            <div class="cart-item-title">${item.name}</div>
+            <div class="cart-item-price">Qty: ${item.quantity}</div>
+            <div class="cart-item-actions">
+              <button class="quantity-btn minus" data-id="${item.id}">-</button>
+              <span class="cart-item-quantity">${item.quantity}</span>
+              <button class="quantity-btn plus" data-id="${item.id}">+</button>
+              <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+        `;
+        cartItems.appendChild(div);
+      });
+
+      document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+        btn.addEventListener('click', (e) => { decreaseQuantity(btn.getAttribute('data-id')); });
+      });
+      document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+        btn.addEventListener('click', (e) => { increaseQuantity(btn.getAttribute('data-id')); });
+      });
+      document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', (e) => { removeFromCart(btn.getAttribute('data-id')); });
+      });
+    }
+
+    function increaseQuantity(id) {
+      const item = cart.find(i => i.id === id);
+      if (item) { item.quantity++; updateCartCount(); updateCartDisplay(); }
+    }
+    function decreaseQuantity(id) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        if (item.quantity > 1) { item.quantity--; }
+        else { removeFromCart(id); return; }
+        updateCartCount(); updateCartDisplay();
+      }
+    }
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCartCount(); updateCartDisplay();
+    }
+
+    // Checkout — no prices in message
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) { alert('Cart empty'); return; }
+      let msg = "Hello Upendo Village! I'd like to order:\n\n";
+      let totalQty = 0;
+      cart.forEach(i => {
+        totalQty += i.quantity;
+        msg += `- ${i.name} (Qty: ${i.quantity})\n`;
+      });
+      msg += `\nTotal items: ${totalQty}\n\n`;
+      msg += "Please let me know the pricing and delivery details. Thank you!";
+      window.open(`https://wa.me/254110426848?text=${encodeURIComponent(msg)}`, '_blank');
+      cart = []; updateCartCount(); updateCartDisplay();
+      cartModal.classList.remove('active'); overlay.classList.remove('active');
+    });
+
+    // Header scroll effect & smooth scroll
+    window.addEventListener('scroll', ()=>{
+      document.getElementById('header').classList.toggle('header-scrolled', window.scrollY > 50);
+    });
+    document.querySelectorAll('nav a, .hero-buttons a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target) window.scrollTo({ top: target.offsetTop-100, behavior:'smooth' });
         }
+      });
+    });
 
-        function updateCartCount() {
-            const count = cart.reduce((sum, i) => sum + i.quantity, 0);
-            cartCount.textContent = count;
-        }
-
-        function updateCartDisplay() {
-            if (!cartItems) return;
-            cartItems.innerHTML = '';
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p>Your cart is empty</p>';
-                cartTotal.textContent = 'Total: KSH 0';
-                return;
-            }
-
-            let total = 0;
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                const div = document.createElement('div');
-                div.className = 'cart-item';
-                div.innerHTML = `
-                    <div class="cart-item-img" style="background-image: url('${item.image}')"></div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-title">${item.name}</div>
-                        <div class="cart-item-price">KSH ${item.price}</div>
-                        <div class="cart-item-actions">
-                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
-                            <span class="cart-item-quantity">${item.quantity}</span>
-                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
-                            <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
-                `;
-                cartItems.appendChild(div);
-            });
-
-            cartTotal.textContent = `Total: KSH ${total.toLocaleString()}`;
-
-            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-                btn.addEventListener('click', (e) => { decreaseQuantity(btn.getAttribute('data-id')); });
-            });
-            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-                btn.addEventListener('click', (e) => { increaseQuantity(btn.getAttribute('data-id')); });
-            });
-            document.querySelectorAll('.remove-item').forEach(btn => {
-                btn.addEventListener('click', (e) => { removeFromCart(btn.getAttribute('data-id')); });
-            });
-        }
-
-        function increaseQuantity(id) {
-            const item = cart.find(i => i.id === id);
-            if (item) { item.quantity++; updateCartCount(); updateCartDisplay(); }
-        }
-        function decreaseQuantity(id) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                if (item.quantity > 1) { item.quantity--; }
-                else { removeFromCart(id); return; }
-                updateCartCount(); updateCartDisplay();
-            }
-        }
-        function removeFromCart(id) {
-            cart = cart.filter(i => i.id !== id);
-            updateCartCount(); updateCartDisplay();
-        }
-
-        // Checkout
-        checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) { alert('Cart empty'); return; }
-            let msg = "Hello Upendo Village! I'd like to order:\n\n";
-            let total = 0;
-            cart.forEach(i => {
-                const sub = i.price * i.quantity;
-                total += sub;
-                msg += `- ${i.name} (Qty: ${i.quantity}) - KSH ${sub}\n`;
-            });
-            msg += `\nTotal: KSH ${total}\n\n`;
-            msg += "Please deliver on Wednesday or Friday (as per your schedule). Thank you!";
-            window.open(`https://wa.me/254110426848?text=${encodeURIComponent(msg)}`, '_blank');
-            cart = []; updateCartCount(); updateCartDisplay();
-            cartModal.classList.remove('active'); overlay.classList.remove('active');
-        });
-
-        // Header scroll effect & smooth scroll
-        window.addEventListener('scroll', ()=>{
-            document.getElementById('header').classList.toggle('header-scrolled', window.scrollY > 50);
-        });
-        document.querySelectorAll('nav a, .hero-buttons a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if(target) window.scrollTo({ top: target.offsetTop-100, behavior:'smooth' });
-                }
-            });
-        });
-
-        // Animation on scroll
-        const observer = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; } });
-        }, { threshold:0.1 });
-        document.querySelectorAll('.product-card, .service-card, .testimonial-card').forEach(c=>{
-            c.style.opacity='0'; c.style.transform='translateY(20px)'; c.style.transition='all 0.5s'; observer.observe(c);
-        });
-    </script>
+    // Animation on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; } });
+    }, { threshold:0.1 });
+    document.querySelectorAll('.product-card, .service-card, .testimonial-card').forEach(c=>{
+      c.style.opacity='0'; c.style.transform='translateY(20px)'; c.style.transition='all 0.5s'; observer.observe(c);
+    });
+  </script>
 </body>
 </html>
