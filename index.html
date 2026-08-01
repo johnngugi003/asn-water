@@ -81,7 +81,6 @@
     .product-content { padding:1.8rem; }
     .product-title { font-size:1.3rem; margin-bottom:0.8rem; color:var(--dark); font-weight:600; }
     .product-description { font-size:0.95rem; color:var(--gray); margin-bottom:1.5rem; line-height:1.5; }
-    .product-price { font-size:1.5rem; font-weight:700; color:var(--secondary); margin-bottom:1.5rem; }
     .product-actions { display:flex; gap:0.8rem; }
     .add-to-cart, .buy-now { flex:1; border:none; padding:0.8rem; border-radius:8px; cursor:pointer; transition:all 0.3s ease; font-weight:600; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
     .add-to-cart { background:var(--primary); color:white; }
@@ -320,7 +319,7 @@
     </div>
   </section>
 
-  <!-- Medical Services -->
+  <!-- Medical Services (each with its own WhatsApp number) -->
   <section class="medical-services" id="medical">
     <div class="container">
       <div class="section-header">
@@ -329,23 +328,26 @@
         <p class="section-description">Beyond providing pure water, we offer comprehensive healthcare services to keep our community healthy.</p>
       </div>
       <div class="services-grid">
+        <!-- General Consultation -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-user-md"></i></div>
           <h3 class="service-title">General Consultation</h3>
           <p class="service-description">Comprehensive medical check-ups and consultations with experienced healthcare professionals.</p>
-          <button class="cta-button book-appointment" data-service="General Consultation">Book Appointment</button>
+          <button class="cta-button book-appointment" data-service="General Consultation" data-phone="254110426848">Book Appointment</button>
         </div>
+        <!-- Pharmacy Services -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-baby"></i></div>
           <h3 class="service-title">Pharmacy Services</h3>
           <p class="service-description">Safe and reliable dispensing of prescribed medications with professional guidance.</p>
-          <button class="cta-button book-appointment" data-service="Pharmacy Services">Book Appointment</button>
+          <button class="cta-button book-appointment" data-service="Pharmacy Services" data-phone="254726706657">Book Appointment</button>
         </div>
+        <!-- Laboratory Tests -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-vial"></i></div>
           <h3 class="service-title">Laboratory Tests</h3>
           <p class="service-description">Accurate diagnostic testing and laboratory services to support proper medical treatment.</p>
-          <button class="cta-button book-appointment" data-service="Laboratory Tests">Book Appointment</button>
+          <button class="cta-button book-appointment" data-service="Laboratory Tests" data-phone="254700123456">Book Appointment</button>
         </div>
       </div>
     </div>
@@ -476,12 +478,13 @@
       });
     });
 
-    // Book appointment
+    // Book appointment — uses the phone number from data-phone attribute
     document.querySelectorAll('.book-appointment').forEach(button => {
       button.addEventListener('click', (e) => {
         const service = button.getAttribute('data-service');
+        const phone = button.getAttribute('data-phone') || '254110426848'; // fallback
         const message = `Hello, I would like to book an appointment for ${service}.`;
-        window.open(`https://wa.me/254726706657?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
       });
     });
 
